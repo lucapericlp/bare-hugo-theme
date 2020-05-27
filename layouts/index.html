@@ -1,20 +1,24 @@
 {{ define "hero-body" }}
-<div class="container">
-  <article class="media">
-    <figure class="image is-64x64 media-left">
-      <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5 $.Site.Params.email }}?s=128&d=identicon"
-           width="32" height="32">
-    </figure>
-    <div class="media-content">
-      <h1 class="title">
-        {{ $.Site.Params.author }}
-      </h1>
-      <h2 class="subtitle">
-        {{ $.Site.Params.description }}
-      </h2>
+<section class="hero is-small is-bold is-info is-fullwidth">
+  <div class="hero-body">
+    <div class="container">
+      <article class="media">
+        <figure class="image is-96x96 media-left main-avatar">
+          <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/{{ md5 $.Site.Params.email }}?s=128&d=identicon"
+              width="32" height="32">
+        </figure>
+        <div class="media-content" style="margin-top:12px">
+          <h1 class="title">
+            {{ $.Site.Params.author }}
+          </h1>
+          <h2 class="subtitle">
+            {{ $.Site.Params.description }}
+          </h2>
+        </div>
+      </article>
     </div>
-  </article>
-</div>
+  </div>
+</section>
 {{ end }}
 
 {{ define "main" }}
