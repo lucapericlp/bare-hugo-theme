@@ -1,11 +1,11 @@
 {{ define "hero-body" }}
-<section class="hero is-medium is-info is-fullwidth header-bg" style="background-image:url('{{ .Param "cover" }}')">
+<section class="hero is-medium is-fullwidth header-bg {{ .Param "heroClasses"}}" style="background-image:url('{{ .Param "cover" }}')">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
+      <h1 class="title" style="color: {{ .Param "titleColor" }}">
         {{ .Title }}
       </h1>
-      <h2 class="subtitle">
+      <h2 class="subtitle" style="color: {{ .Param "titleColor" }}">
         <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
           {{ .Date.Format "January 02, 2006" }}
         </time>
@@ -25,9 +25,11 @@
 {{ end }}
 
 {{ define "attribution" }}
+{{ if isset .Params "attribution" }}
 <div class="container has-text-centered">
   <p style="margin-top:5px"><small><a href='{{ .Param "attribution"}}'>Image source</a></small></p>
 </div>
+{{ end }}
 {{ end }}
 
 {{ define "main" }}
