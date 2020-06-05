@@ -1,5 +1,5 @@
 {{ define "hero-body" }}
-<section class="hero is-medium is-fullwidth header-bg {{ .Param "heroClasses"}}" style="background-image:url('{{ .Param "cover" }}')">
+<section class="hero is-medium is-fullwidth header-bg {{ .Param "heroClasses"}}" style="background-image:url('{{ .Param "cover" }}'); {{ .Param "extraBackgroundStyle" }}">
   <div class="hero-body">
     <div class="container">
       <h1 class="title" style="color: {{ .Param "titleColor" }}">
